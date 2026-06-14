@@ -1,0 +1,13 @@
+movl $1, %eax
+
+The reason we are moving the number 1 into %eax is because we are preparing to
+call the Linux Kernel. The number 1 is the number of the exit system call
+
+movl $5, %ebx
+
+This is the status number that will return to the operating system.
+Change this around and it will return different things to echo $?
+
+int $0x80 
+
+This wakes up the kernel to run the exit command
